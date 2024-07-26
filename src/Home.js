@@ -1,20 +1,12 @@
-import cdi from "./icons/cold-drinks-icon.png"
-import homeImage from "./images/home.png"
+import homeImage from "./images/one-million-background.jpg";
 
 const Home = () => {
-    return (
-        <section id="home">
-            <img src={homeImage}/>
-            {/* <ul>
-                <li>
-                    <div>
-                        <img src={cdi} />
-                        <h4>Cold Drinks</h4>
-                    </div> 
-                </li>
-            </ul> */}
-        </section>
-    );
-}
- 
+	return (
+		<section id="home">
+			<img src={homeImage} alt="Home" />
+			{/* <h1>WELCOME TO</h1> */}
+		</section>
+	);
+};
+
 export default Home;
