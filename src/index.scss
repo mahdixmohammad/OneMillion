@@ -11,11 +11,11 @@
 }
 @font-face {
 	font-family: Poppins;
-	src: url(fonts/Poppins.otf);
+	src: url(assets/fonts/Poppins.otf);
 }
 @font-face {
 	font-family: ArialNovaC;
-	src: url(fonts/ArialNovaCond.ttf);
+	src: url(assets/fonts/ArialNovaCond.ttf);
 }
 body {
 	background: rgba(225, 225, 225, 0.619);
@@ -178,26 +178,63 @@ nav ul li a:hover {
 }
 #home {
 	width: 100%;
-	/* height: 700px; */
-}
-#home img {
-	width: 100%;
-	height: 500px;
-	object-fit: cover;
-	filter: saturate(120%) contrast(120%) brightness(80%);
-}
-#home h1 {
-	position: relative;
-	color: rgb(255, 255, 255);
-	top: -490px;
-	font-size: 70px;
-	text-shadow: 3px 3px 1px rgb(0, 0, 0);
-	font-weight: 700;
+
+	img {
+		width: 100%;
+		height: 400px;
+		object-fit: cover;
+		filter: saturate(120%) contrast(120%) brightness(80%);
+	}
+	h1 {
+		position: relative;
+		color: rgb(255, 255, 255);
+		top: -490px;
+		font-size: 70px;
+		text-shadow: 3px 3px 1px rgb(0, 0, 0);
+		font-weight: 700;
+	}
 }
 .selection-container {
-	width: 100%;
-	height: 1000px;
+	width: 80%;
+	margin: 50px auto;
 	display: grid;
+	grid-template-columns: repeat(auto-fit, 200px);
+	grid-template-rows: repeat(auto-fit, 250px);
+	grid-auto-rows: 250px;
+	justify-content: center;
+	max-width: 1000px;
+	gap: 50px;
+}
+.selection-card {
+	color: black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transition: scale 0.2s;
+
+	&:hover {
+		scale: 1.1;
+	}
+}
+.selection-card div {
+	padding: 0px;
+	height: 200px;
+	width: 150px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	border: 2px solid rgb(200, 200, 200);
+	background: linear-gradient(135deg, rgb(195, 195, 195), rgb(245, 245, 245), rgb(195, 195, 195));
+	margin-bottom: 5px;
+
+	img {
+		height: 150px;
+		width: 130px;
+		object-fit: contain;
+		border-radius: 10px;
+	}
 }
 #menu {
 	display: flex;
@@ -223,22 +260,24 @@ footer {
 	margin-top: 30px;
 	box-shadow: 0 0 0px 1px rgb(130, 130, 130);
 	background: rgb(255, 255, 255);
-}
-footer * {
-	color: rgb(90, 90, 90);
-}
-footer #logo {
-	margin: 0;
-}
-footer ul {
-	display: flex;
-	justify-content: center;
-	margin-bottom: 12px;
-}
-footer ul li {
-	margin: 0 5px;
-}
-.social-media:hover {
-	border-bottom: 2px solid rgb(130, 130, 130);
-	transition: 0.1s;
+
+	* {
+		color: rgb(90, 90, 90);
+	}
+	#logo {
+		margin: 0;
+	}
+	ul {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 12px;
+
+		li {
+			margin: 0 5px;
+		}
+	}
+	.social-media:hover {
+		border-bottom: 2px solid rgb(130, 130, 130);
+		transition: 0.1s;
+	}
 }

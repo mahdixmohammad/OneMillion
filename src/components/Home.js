@@ -1,4 +1,4 @@
-import homeImage from "./images/one-million-background.jpg";
+import homeImage from "../assets/images/one-million-background.jpg";
 
 const Home = () => {
 	return (

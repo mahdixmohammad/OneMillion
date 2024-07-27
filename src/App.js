@@ -1,8 +1,9 @@
-import Navbar from "./Navbar";
-import Dropdown from "./Dropdown";
-import Menu from "./Menu";
-import Home from "./Home";
-import Selection from "./Selection";
+import Navbar from "./components/Navbar";
+import Dropdown from "./components/Dropdown";
+import Menu from "./components/Menu";
+import Home from "./components/Home";
+import Selection from "./components/Selection";
+import Footer from "./components/Footer";
 
 function App() {
 	return (
@@ -12,6 +13,7 @@ function App() {
 			<Home />
 			<Selection />
 			{/* <Menu /> */}
+			<Footer />
 		</div>
 	);
 }
