@@ -1,6 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Bona+Nova+SC:ital,wght@0,400;0,700;1,400&family=Merienda:wght@300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-:root {
-	color-scheme: only light;
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap");
+
+$secondary-color: rgb(226, 172, 69);
+
+html {
+	scroll-behavior: smooth;
 }
 * {
 	text-decoration: none;
@@ -9,19 +12,12 @@
 	padding: 0;
 	box-sizing: border-box;
 }
-@font-face {
-	font-family: Poppins;
-	src: url(assets/fonts/Poppins.otf);
-}
-@font-face {
-	font-family: ArialNovaC;
-	src: url(assets/fonts/ArialNovaCond.ttf);
-}
 body {
-	background: rgba(225, 225, 225, 0.619);
-	font-family: "Merienda", Poppins, ArialNovaC, "Calibri", sans-serif;
+	background: rgb(20, 20, 20);
+	font-family: "Merienda", "Calibri", sans-serif;
 	text-align: center;
 	font-size: 18px;
+	color: $secondary-color;
 }
 nav {
 	display: flex;
@@ -32,10 +28,22 @@ nav {
 	z-index: 1000;
 	padding: 0 10%;
 	transition: 0.4s;
-	/* box-shadow: 0 0 0 1px rgb(130, 130, 130); */
 	position: fixed;
 	background: transparent;
-	color: rgb(226, 172, 69);
+}
+nav.active {
+	background: rgba(20, 20, 20, 0.85);
+	backdrop-filter: blur(5px);
+	color: $secondary-color;
+	box-shadow: 0 0 1px 2px $secondary-color;
+
+	li a {
+		color: $secondary-color;
+	}
+	.larr,
+	.rarr {
+		background: $secondary-color;
+	}
 }
 #logo {
 	width: 50px;
@@ -63,7 +71,7 @@ nav {
 	border-bottom: 0;
 }
 .arrow:hover {
-	border-bottom: 3px solid black;
+	border-bottom: 3px solid rgb(255, 255, 255);
 	transition: all 0.1s ease-out;
 }
 .arrow div {
@@ -79,6 +87,7 @@ nav {
 	background: white;
 	border-radius: 40px;
 	transition: 0.2s;
+	cursor: pointer;
 }
 .larr {
 	left: 6px;
@@ -96,13 +105,13 @@ nav {
 nav ul {
 	display: flex;
 }
-nav ul li a {
+nav li a {
 	color: rgb(255, 255, 255);
 	font-size: 22px;
 	font-weight: 500;
 }
-nav ul li a:hover {
-	border-bottom: 3px solid black;
+nav li a:hover {
+	border-bottom: 3px solid rgb(255, 255, 255);
 	transition: all 0.1s ease-out;
 }
 @media only screen and (max-width: 550px) {
@@ -176,37 +185,80 @@ nav ul li a:hover {
 		text-align: center;
 	}
 }
+@keyframes exposureAnimation {
+	from {
+		filter: saturate(90%) contrast(90%);
+	}
+	to {
+		filter: saturate(120%) contrast(110%);
+	}
+}
 #home {
 	width: 100%;
+	animation: exposureAnimation 3s ease-in-out alternate infinite;
 
 	img {
 		width: 100%;
-		height: 400px;
+		height: 100vh;
 		object-fit: cover;
-		filter: saturate(120%) contrast(120%) brightness(80%);
+
+		@media screen and (max-width: 550px) {
+			height: 70vh;
+		}
 	}
 	h1 {
 		position: relative;
 		color: rgb(255, 255, 255);
-		top: -490px;
+		top: -480px;
 		font-size: 70px;
 		text-shadow: 3px 3px 1px rgb(0, 0, 0);
-		font-weight: 700;
+		font-weight: 500;
+	}
+	@keyframes arrowBounce {
+		to {
+			top: -112px;
+		}
+	}
+	.scroll-down {
+		position: relative;
+		top: -100px;
+		animation: arrowBounce 0.7s linear infinite alternate;
+		cursor: pointer;
+	}
+	.scroll-down:hover * {
+		background: $secondary-color;
+	}
+	.larr {
+		left: 9px;
+	}
+	.larr,
+	.rarr {
+		width: 25px;
+		height: 3px;
+		transition: background 0.3s;
+	}
+}
+.selection {
+	margin: 40px auto;
+	width: 80%;
+
+	h2 {
+		margin-bottom: 30px;
+		font-size: 40px;
+		text-shadow: 1px 1px 4px $secondary-color;
 	}
 }
 .selection-container {
-	width: 80%;
-	margin: 50px auto;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, 200px);
 	grid-template-rows: repeat(auto-fit, 250px);
 	grid-auto-rows: 250px;
 	justify-content: center;
 	max-width: 1000px;
-	gap: 50px;
+	gap: 25px;
 }
 .selection-card {
-	color: black;
+	color: $secondary-color;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -220,13 +272,13 @@ nav ul li a:hover {
 .selection-card div {
 	padding: 0px;
 	height: 200px;
-	width: 150px;
+	width: 200px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	border-radius: 10px;
-	border: 2px solid rgb(200, 200, 200);
-	background: linear-gradient(135deg, rgb(195, 195, 195), rgb(245, 245, 245), rgb(195, 195, 195));
+	border: 3px solid rgb(230, 230, 230);
+	background: linear-gradient(135deg, rgb(145, 145, 145), rgb(210, 210, 210), rgb(145, 145, 145));
 	margin-bottom: 5px;
 
 	img {
@@ -253,19 +305,20 @@ nav ul li a:hover {
 footer {
 	display: flex;
 	flex-direction: column;
-	align-content: center;
-	justify-content: center;
-	height: 180px;
+	align-items: center;
+	padding: 20px;
 	font-size: 14px;
-	margin-top: 30px;
 	box-shadow: 0 0 0px 1px rgb(130, 130, 130);
-	background: rgb(255, 255, 255);
+	background: rgb(220, 220, 220);
 
 	* {
 		color: rgb(90, 90, 90);
 	}
+	a {
+		width: fit-content;
+	}
 	#logo {
-		margin: 0;
+		margin-bottom: 5px;
 	}
 	ul {
 		display: flex;

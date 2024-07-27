@@ -1,4 +1,6 @@
-import logo from "../assets/images/one-million-logo.png";
+import { useEffect } from "react";
+import whiteLogo from "../assets/images/one-million-logo-white.png";
+import goldLogo from "../assets/images/one-million-logo-gold.png";
 
 const Navbar = () => {
 	const arrow = document.querySelector(".arrow");
@@ -28,10 +30,22 @@ const Navbar = () => {
 		}
 	};
 
+	useEffect(() => {
+		window.addEventListener("scroll", () => {
+			if (window.scrollY >= document.querySelector("#home").offsetHeight - 100) {
+				document.querySelector("nav").classList.add("active");
+				document.querySelector("nav #logo").src = goldLogo;
+			} else {
+				document.querySelector("nav").classList.remove("active");
+				document.querySelector("nav #logo").src = whiteLogo;
+			}
+		});
+	});
+
 	return (
 		<nav>
 			<a href="#top">
-				<img src={logo} id="logo" alt="" />
+				<img src={whiteLogo} id="logo" alt="" />
 			</a>
 			<ul>
 				<li>
