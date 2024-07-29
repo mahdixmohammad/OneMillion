@@ -9,18 +9,26 @@ import milkcakeIcon from "../assets/icons/milkcake-icon.png";
 import gelatoIcon from "../assets/icons/gelato-icon.png";
 import icecreamIcon from "../assets/icons/ice-cream-icon.png";
 import wafflecrepeIcon from "../assets/icons/waffle-crepe-icon.png";
+import goldLogo from "../assets/images/one-million-logo-gold.png";
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Selection = () => {
+	useEffect(() => {
+		document.querySelector("nav").classList.add("active");
+		document.querySelector("nav #logo").src = goldLogo;
+	}, []);
+
 	return (
 		<section className="selection">
-			<h2>Our Products</h2>
+			<h2>Our Menu</h2>
 			<div className="selection-container">
-				<a href="# " className="selection-card">
+				<Link to="/menu/colddrinks" className="selection-card">
 					<div>
 						<img src={coldDrinkIcon} alt="" />
 					</div>
 					<h3>Cold Drinks</h3>
-				</a>
+				</Link>
 				<a href="# " className="selection-card">
 					<div>
 						<img src={mixIcon} alt="" />

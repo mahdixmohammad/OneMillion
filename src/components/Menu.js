@@ -20,11 +20,20 @@ import mcm from "../assets/images/milk-cake-menu.jpg";
 import gm from "../assets/images/gelato-menu.jpg";
 import icm from "../assets/images/ice-cream-menu.jpg";
 import wcm from "../assets/images/waffle-crepe-menu.jpg";
+import goldLogo from "../assets/images/one-million-logo-gold.png";
+import { useEffect } from "react";
+import Selection from "./Selection";
 
 const Menu = () => {
+	useEffect(() => {
+		document.querySelector("nav").classList.add("active");
+		document.querySelector("nav #logo").src = goldLogo;
+	}, []);
+
 	return (
 		<div id="menu">
-			<img src={cdm1} className="all cold-drinks" />
+			<Selection />
+			{/* <img src={cdm1} className="all cold-drinks" />
 			<img src={cdm2} className="all cold-drinks" />
 			<img src={cdm3} className="all cold-drinks" />
 			<img src={cdm4} className="all cold-drinks" />
@@ -45,7 +54,7 @@ const Menu = () => {
 			<img src={mcm} className="all milkcake" />
 			<img src={gm} className="all gelato" />
 			<img src={icm} className="all ice-cream" />
-			<img src={wcm} className="all waffle-crepe" />
+			<img src={wcm} className="all waffle-crepe" /> */}
 		</div>
 	);
 };
