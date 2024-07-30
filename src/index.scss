@@ -13,7 +13,7 @@ html {
 	box-sizing: border-box;
 }
 body {
-	background: rgb(20, 20, 20);
+	background: linear-gradient(90deg, rgb(15, 15, 15) 20%, rgb(25, 25, 25) 50%, rgb(15, 15, 15) 80%);
 	font-family: "Merienda", "Calibri", sans-serif;
 	text-align: center;
 	font-size: 18px;
@@ -43,11 +43,12 @@ nav {
 		font-size: 22px;
 		font-weight: 500;
 		margin: 0 0 5px;
+		border-radius: 20px;
+		transition: background 0.2s ease-in-out;
 	}
 	li a:hover {
 		background: rgb(255, 255, 255);
 		color: $secondary-color;
-		border-radius: 20px;
 	}
 }
 
@@ -263,7 +264,6 @@ nav.active li a.active {
 	}
 }
 h2 {
-	margin-bottom: 40px;
 	font-size: 50px;
 	text-shadow: 1px 1px 4px $secondary-color;
 	border-bottom: 2px solid $secondary-color;
@@ -274,9 +274,6 @@ h2 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-image: linear-gradient(rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 0.5)), url(tiletexture.jpg);
-	background-repeat: round;
-	background-size: cover;
 }
 .selection-container {
 	display: grid;
@@ -287,6 +284,7 @@ h2 {
 	width: 80%;
 	max-width: 1000px;
 	gap: 25px;
+	padding-top: 40px;
 }
 .selection-card {
 	color: $secondary-color;
@@ -307,8 +305,8 @@ h2 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border-radius: 10px;
-	border: 2px solid rgb(230, 230, 230);
+	border-radius: 25px;
+	border: 3px solid rgb(55, 55, 55);
 	background-color: $secondary-color;
 	margin-bottom: 5px;
 
@@ -325,18 +323,81 @@ h2 {
 	align-items: center;
 	flex-direction: column;
 	// padding: 100px 0;
-	background-image: linear-gradient(rgba(35, 35, 35, 0.5), rgba(35, 35, 35, 0.5)), url(tiletexture.jpg);
 	background-repeat: round;
 	background-size: cover;
 }
-// #menu img {
-// 	border-radius: 10px;
-// 	margin-top: 20px;
-// 	width: 100vw;
-// 	max-width: 600px;
-// 	box-shadow: 0 0 2px 3px rgb(105, 105, 105);
-// 	transition: 0.5s;
-// }
+.cold-drinks {
+	padding: 100px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	.go-back-container {
+		display: flex;
+		align-items: center;
+		gap: 5px;
+		cursor: pointer;
+		color: $secondary-color;
+		font-size: 26px;
+		text-shadow: none;
+	}
+	.go-back-arrow {
+		width: 70px;
+		position: relative;
+	}
+	h3 {
+		font-size: 40px;
+		margin: 40px 0;
+	}
+}
+.product-container {
+	width: 100%;
+	padding: 0 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 50px;
+
+	.product-image {
+		height: 300px;
+		width: 300px;
+		background: $secondary-color;
+		border-radius: 25px;
+		border: 3px solid rgb(55, 55, 55);
+	}
+	img {
+		width: 150px;
+		object-fit: contain;
+		margin: auto;
+	}
+	span {
+		color: white;
+	}
+	div {
+		font-size: 21px;
+		display: flex;
+		justify-content: space-between;
+		padding: 0 5px;
+	}
+}
+.product-types {
+	display: flex;
+	flex-direction: column;
+	gap: 0px;
+	justify-content: space-between;
+	width: 400px;
+
+	div {
+		border-radius: 5px;
+	}
+	div:hover:not(.heading) {
+		background: lighten($color: $secondary-color, $amount: 25);
+	}
+	.heading {
+		background: $secondary-color;
+		color: white;
+	}
+}
 footer {
 	display: flex;
 	flex-direction: column;
@@ -366,7 +427,7 @@ footer {
 		}
 	}
 	.social-media:hover {
-		border-bottom: 2px solid rgb(130, 130, 130);
+		border-bottom: 2px solid rgb(0, 0, 0);
 		transition: 0.1s;
 	}
 }
