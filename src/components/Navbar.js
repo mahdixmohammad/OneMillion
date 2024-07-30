@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import whiteLogo from "../assets/images/one-million-logo-white.png";
+import goldLogo from "../assets/images/one-million-logo-gold.png";
 import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
@@ -8,6 +8,8 @@ const Navbar = () => {
 
 	useEffect(() => {
 		setActiveLink(location.pathname);
+		document.querySelector("nav #logo").src = goldLogo;
+		document.querySelector("nav").classList.remove("active");
 	}, [location]);
 
 	const handleLinkClick = path => {
@@ -17,7 +19,7 @@ const Navbar = () => {
 	return (
 		<nav>
 			<Link to="/">
-				<img src={whiteLogo} id="logo" alt="Logo" />
+				<img src={goldLogo} id="logo" alt="Logo" />
 			</Link>
 			<ul>
 				<li>

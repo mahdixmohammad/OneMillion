@@ -1,5 +1,5 @@
-import coldDrinkIcon from "../assets/icons/cold-drinks-icon.png";
-import mixIcon from "../assets/icons/mix-icon.png";
+import coldDrinkIcon from "../assets/icons/cold-drinks/natural-juice.png";
+import mixIcon from "../assets/icons/mix/mexico-pomegranate.png";
 import bubblesIcon from "../assets/icons/bubbles-icon.png";
 import hotdrinksIcon from "../assets/icons/hot-drinks-icon.png";
 import bakeryIcon from "../assets/icons/bakery-icon.png";
@@ -9,16 +9,9 @@ import milkcakeIcon from "../assets/icons/milkcake-icon.png";
 import gelatoIcon from "../assets/icons/gelato-icon.png";
 import icecreamIcon from "../assets/icons/ice-cream-icon.png";
 import wafflecrepeIcon from "../assets/icons/waffle-crepe-icon.png";
-import goldLogo from "../assets/images/one-million-logo-gold.png";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const Selection = () => {
-	useEffect(() => {
-		document.querySelector("nav").classList.add("active");
-		document.querySelector("nav #logo").src = goldLogo;
-	}, []);
-
 	return (
 		<section className="selection">
 			<h2>Our Menu</h2>
@@ -29,12 +22,12 @@ const Selection = () => {
 					</div>
 					<h3>Cold Drinks</h3>
 				</Link>
-				<a href="# " className="selection-card">
+				<Link to="/menu/mix" className="selection-card">
 					<div>
 						<img src={mixIcon} alt="" />
 					</div>
 					<h3>Mix</h3>
-				</a>
+				</Link>
 				<a href="# " className="selection-card">
 					<div>
 						<img src={bubblesIcon} alt="" />

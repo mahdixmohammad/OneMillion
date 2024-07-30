@@ -10,12 +10,12 @@ const Home = () => {
 		});
 
 		function checkNavActive() {
-			if (window.scrollY >= document.querySelector("#home").offsetHeight - 80) {
+			if (window.scrollY <= document.querySelector("#home").offsetHeight - 80) {
 				document.querySelector("nav").classList.add("active");
-				document.querySelector("nav #logo").src = goldLogo;
+				document.querySelector("nav #logo").src = whiteLogo;
 			} else {
 				document.querySelector("nav").classList.remove("active");
-				document.querySelector("nav #logo").src = whiteLogo;
+				document.querySelector("nav #logo").src = goldLogo;
 			}
 		}
 

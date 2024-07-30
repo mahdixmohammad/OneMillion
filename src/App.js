@@ -1,11 +1,10 @@
 import Navbar from "./components/Navbar";
-import Dropdown from "./components/Dropdown";
-import Menu from "./components/Menu";
 import Home from "./components/Home";
 import Selection from "./components/Selection";
 import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ColdDrinks from "./components/Products/ColdDrinks";
+import Mix from "./components/Products/Mix";
 
 function App() {
 	return (
@@ -17,13 +16,13 @@ function App() {
 						path="/"
 						element={
 							<>
-								{/* <Dropdown /> */}
 								<Home />
 							</>
 						}
 					></Route>
 					<Route path="/menu" element={<Selection />}></Route>
-					<Route path="/menu/colddrinks/" element={<ColdDrinks />}></Route>
+					<Route path="/menu/colddrinks" element={<ColdDrinks />}></Route>
+					<Route path="/menu/mix" element={<Mix />}></Route>
 				</Routes>
 				<Footer />
 			</div>
