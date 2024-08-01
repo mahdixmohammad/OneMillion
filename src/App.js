@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ColdDrinks from "./components/Products/ColdDrinks";
 import Mix from "./components/Products/Mix";
+import Bubbles from "./components/Products/Bubbles";
 
 function App() {
 	return (
@@ -23,6 +24,7 @@ function App() {
 					<Route path="/menu" element={<Selection />}></Route>
 					<Route path="/menu/colddrinks" element={<ColdDrinks />}></Route>
 					<Route path="/menu/mix" element={<Mix />}></Route>
+					<Route path="/menu/bubbles" element={<Bubbles />}></Route>
 				</Routes>
 				<Footer />
 			</div>

@@ -1,6 +1,6 @@
 import coldDrinkIcon from "../assets/icons/cold-drinks/natural-juice.png";
 import mixIcon from "../assets/icons/mix/mexico-pomegranate.png";
-import bubblesIcon from "../assets/icons/bubbles-icon.png";
+import bubblesIcon from "../assets/icons/bubbles/strawberry-bubbles.png";
 import hotdrinksIcon from "../assets/icons/hot-drinks-icon.png";
 import bakeryIcon from "../assets/icons/bakery-icon.png";
 import cakeIcon from "../assets/icons/cake-icon.png";
@@ -28,12 +28,12 @@ const Selection = () => {
 					</div>
 					<h3>Mix</h3>
 				</Link>
-				<a href="# " className="selection-card">
+				<Link to="/menu/bubbles" className="selection-card">
 					<div>
 						<img src={bubblesIcon} alt="" />
 					</div>
 					<h3>Bubbles Juice</h3>
-				</a>
+				</Link>
 				<a href="# " className="selection-card">
 					<div>
 						<img src={hotdrinksIcon} alt="" />
