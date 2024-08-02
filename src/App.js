@@ -6,6 +6,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ColdDrinks from "./components/Products/ColdDrinks";
 import Mix from "./components/Products/Mix";
 import Bubbles from "./components/Products/Bubbles";
+import HotDrinks from "./components/Products/HotDrinks";
 
 function App() {
 	return (
@@ -25,6 +26,7 @@ function App() {
 					<Route path="/menu/colddrinks" element={<ColdDrinks />}></Route>
 					<Route path="/menu/mix" element={<Mix />}></Route>
 					<Route path="/menu/bubbles" element={<Bubbles />}></Route>
+					<Route path="/menu/hotdrinks" element={<HotDrinks />}></Route>
 				</Routes>
 				<Footer />
 			</div>
