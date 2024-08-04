@@ -2,13 +2,13 @@ import coldDrinkIcon from "../assets/icons/cold-drinks/natural-juice.png";
 import mixIcon from "../assets/icons/mix/mexico-pomegranate.png";
 import bubblesIcon from "../assets/icons/bubbles/strawberry-bubbles.png";
 import hotdrinksIcon from "../assets/icons/hot-drinks/latte.png";
-import bakeryIcon from "../assets/icons/bakery-icon.png";
-import cakeIcon from "../assets/icons/cake-icon.png";
-import cheesecakeIcon from "../assets/icons/cheesecake-icon.png";
-import milkcakeIcon from "../assets/icons/milkcake-icon.png";
-import gelatoIcon from "../assets/icons/gelato-icon.png";
-import icecreamIcon from "../assets/icons/ice-cream-icon.png";
-import wafflecrepeIcon from "../assets/icons/waffle-crepe-icon.png";
+import bakeryIcon from "../assets/icons/bakery/brownies.png";
+import cakeIcon from "../assets/icons/cake/nutella-cake.png";
+import cheesecakeIcon from "../assets/icons/cheesecake/pistachio-cheesecake.png";
+import milkcakeIcon from "../assets/icons/milkcake/caramel-cake.png";
+import gelatoIcon from "../assets/icons/gelato/lotus.png";
+import icecreamIcon from "../assets/icons/icecream/soft.png";
+import wafflecrepeIcon from "../assets/icons/waffle-crepe/waffle-burger.png";
 import { Link } from "react-router-dom";
 
 const Selection = () => {
@@ -40,48 +40,48 @@ const Selection = () => {
 					</div>
 					<h3>Hot Drinks</h3>
 				</Link>
-				<a href="# " className="selection-card">
+				<Link to="/menu/bakery" className="selection-card">
 					<div>
 						<img src={bakeryIcon} alt="" />
 					</div>
 					<h3>Bakery</h3>
-				</a>
-				<a href="# " className="selection-card">
+				</Link>
+				<Link to="/menu/cake" className="selection-card">
 					<div>
 						<img src={cakeIcon} alt="" />
 					</div>
 					<h3>Cake</h3>
-				</a>
-				<a href="# " className="selection-card">
+				</Link>
+				<Link to="/menu/cheesecake" className="selection-card">
 					<div>
 						<img src={cheesecakeIcon} alt="" />
 					</div>
 					<h3>Cheesecake</h3>
-				</a>
-				<a href="# " className="selection-card">
+				</Link>
+				<Link to="/menu/milkcake" className="selection-card">
 					<div>
 						<img src={milkcakeIcon} alt="" />
 					</div>
 					<h3>Milkcake</h3>
-				</a>
-				<a href="# " className="selection-card">
+				</Link>
+				<Link to="/menu/gelato" className="selection-card">
 					<div>
 						<img src={gelatoIcon} alt="" />
 					</div>
 					<h3>Gelato</h3>
-				</a>
-				<a href="# " className="selection-card">
+				</Link>
+				<Link to="/menu/icecream" className="selection-card">
 					<div>
 						<img src={icecreamIcon} alt="" />
 					</div>
 					<h3>Ice Cream</h3>
-				</a>
-				<a href="# " className="selection-card">
+				</Link>
+				<Link to="/menu/wafflecrepe" className="selection-card">
 					<div>
 						<img src={wafflecrepeIcon} alt="" />
 					</div>
 					<h3>Waffle & Crepe</h3>
-				</a>
+				</Link>
 			</div>
 		</section>
 	);

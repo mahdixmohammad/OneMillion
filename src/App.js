@@ -7,6 +7,13 @@ import ColdDrinks from "./components/Products/ColdDrinks";
 import Mix from "./components/Products/Mix";
 import Bubbles from "./components/Products/Bubbles";
 import HotDrinks from "./components/Products/HotDrinks";
+import Bakery from "./components/Products/Bakery";
+import Cake from "./components/Products/Cake";
+import Cheesecake from "./components/Products/Cheesecake";
+import Milkcake from "./components/Products/Milkcake";
+import Gelato from "./components/Products/Gelato";
+import IceCream from "./components/Products/IceCream";
+import WaffleCrepe from "./components/Products/WaffleCrepe";
 
 function App() {
 	return (
@@ -27,6 +34,13 @@ function App() {
 					<Route path="/menu/mix" element={<Mix />}></Route>
 					<Route path="/menu/bubbles" element={<Bubbles />}></Route>
 					<Route path="/menu/hotdrinks" element={<HotDrinks />}></Route>
+					<Route path="/menu/bakery" element={<Bakery />}></Route>
+					<Route path="/menu/cake" element={<Cake />}></Route>
+					<Route path="/menu/cheesecake" element={<Cheesecake />}></Route>
+					<Route path="/menu/milkcake" element={<Milkcake />}></Route>
+					<Route path="/menu/gelato" element={<Gelato />}></Route>
+					<Route path="/menu/icecream" element={<IceCream />}></Route>
+					<Route path="/menu/wafflecrepe" element={<WaffleCrepe />}></Route>
 				</Routes>
 				<Footer />
 			</div>
