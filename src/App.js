@@ -14,6 +14,7 @@ import Milkcake from "./components/Products/Milkcake";
 import Gelato from "./components/Products/Gelato";
 import IceCream from "./components/Products/IceCream";
 import WaffleCrepe from "./components/Products/WaffleCrepe";
+import FindUs from "./components/FindUs";
 
 function App() {
 	return (
@@ -26,6 +27,7 @@ function App() {
 						element={
 							<>
 								<Home />
+								<FindUs />
 							</>
 						}
 					></Route>

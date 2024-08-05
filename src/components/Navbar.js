@@ -8,8 +8,10 @@ const Navbar = () => {
 
 	useEffect(() => {
 		setActiveLink(location.pathname);
-		document.querySelector("nav #logo").src = goldLogo;
-		document.querySelector("nav").classList.remove("active");
+		if (location.pathname !== "/") {
+			document.querySelector("nav #logo").src = goldLogo;
+			document.querySelector("nav").classList.remove("active");
+		}
 	}, [location]);
 
 	const handleLinkClick = path => {

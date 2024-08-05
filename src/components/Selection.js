@@ -6,7 +6,7 @@ import bakeryIcon from "../assets/icons/bakery/brownies.png";
 import cakeIcon from "../assets/icons/cake/nutella-cake.png";
 import cheesecakeIcon from "../assets/icons/cheesecake/pistachio-cheesecake.png";
 import milkcakeIcon from "../assets/icons/milkcake/caramel-cake.png";
-import gelatoIcon from "../assets/icons/gelato/lotus.png";
+import gelatoIcon from "../assets/icons/gelato/strawberry.png";
 import icecreamIcon from "../assets/icons/icecream/soft.png";
 import wafflecrepeIcon from "../assets/icons/waffle-crepe/waffle-burger.png";
 import { Link } from "react-router-dom";

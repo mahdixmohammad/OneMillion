@@ -1,4 +1,4 @@
-import logo from "../assets/images/one-million-logo-extra.png";
+import logo from "../assets/images/one-million-logo-white.png";
 
 const Footer = () => {
 	return (

@@ -173,6 +173,7 @@ nav.active {
 		}
 	}
 	.scroll-down {
+		width: fit-content;
 		position: absolute;
 		top: 85%;
 		left: 0;
@@ -251,20 +252,148 @@ h2 {
 	margin-bottom: 5px;
 
 	img {
-		height: 150px;
-		width: 130px;
+		height: 160px;
+		width: 150px;
 		object-fit: contain;
 		border-radius: 10px;
 	}
 }
-#menu {
+#contact {
 	display: flex;
-	justify-content: center;
+	flex-wrap: wrap;
+	text-align: center;
+	justify-content: space-evenly;
 	align-items: center;
+	height: fit-content;
+	padding: 100px 10px;
+	width: 100%;
+	gap: 50px;
+}
+#information {
+	width: fit-content;
+	height: 600px;
+	color: white;
+	padding: 20px 0;
+	display: flex;
 	flex-direction: column;
-	// padding: 100px 0;
-	background-repeat: round;
-	background-size: cover;
+	align-items: center;
+	justify-content: center;
+}
+#information h1 {
+	font-size: 35px;
+	color: $secondary-color;
+}
+#information iframe {
+	margin: 10px;
+	width: 75vw;
+	max-width: 325px;
+	border: 2px solid $secondary-color !important;
+}
+#information iframe:hover {
+	box-shadow: 0 0 5px $secondary-color;
+	transform: scale(1.1);
+	transition: 0.3s;
+}
+#information address {
+	color: white;
+}
+.contact-info {
+	display: flex;
+	width: 75vw;
+	max-width: 325px;
+	justify-content: start;
+	align-items: center;
+	margin: 10px 0;
+	padding: 25px;
+	height: 40px;
+	border-radius: 12px;
+	border: 3px solid transparent;
+	gap: 10px;
+	color: white;
+}
+.contact-info:hover {
+	border: 3px solid $secondary-color;
+	background: rgba(226, 172, 69, 0.5);
+	transition: 0.3s linear;
+}
+.contact-info img {
+	display: inline;
+	width: 30px;
+}
+form {
+	background: rgb(240, 240, 240);
+	display: flex;
+	flex-direction: column;
+	padding: 3vw 4vw;
+	width: 40%;
+	min-width: 400px;
+	max-width: 500px;
+	border-radius: 20px;
+	margin: 40px 0;
+}
+form h2 {
+	text-align: center;
+	border-bottom: none;
+	font-size: 30px;
+	width: 100%;
+	text-shadow: none;
+	font-weight: 900;
+}
+form input,
+form textarea {
+	border: 0;
+	margin: 10px 0;
+	padding: 20px;
+	outline: none;
+	background: transparent;
+	color: black;
+	font-size: 14px;
+	resize: none;
+	border-bottom: 2px solid rgb(211, 211, 211);
+	font-family: "Merienda";
+}
+form input:focus,
+form textarea:focus {
+	border-bottom: 2px solid $secondary-color;
+	transition: 0.4s;
+}
+::placeholder {
+	color: rgb(75, 75, 75);
+	font-family: "Merienda";
+	font-size: 14px;
+	font-weight: 400;
+}
+form button {
+	cursor: pointer;
+	width: 200px;
+	height: 50px;
+	margin: 20px auto 0;
+	background: $secondary-color;
+	border: 0px solid black;
+	border-radius: 20px;
+	color: rgb(255, 255, 255);
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 50px;
+	font-family: "Merienda";
+	position: relative;
+}
+form button:hover {
+	transform: scale(1.1);
+	box-shadow: 0 0 1px 1px lighten($secondary-color, 20);
+	transition: 0.3s;
+}
+form button img {
+	width: 25px;
+	position: absolute;
+	left: -80px;
+	right: 0;
+	bottom: 0;
+	top: -5px;
+	margin: auto;
+}
+.find-us {
+	height: 500px;
 }
 .products {
 	padding: 100px 0;
@@ -293,6 +422,28 @@ h2 {
 	h3 {
 		font-size: 40px;
 		margin-bottom: 20px;
+		display: flex;
+		gap: 10px;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+		span {
+			width: fit-content;
+			background: $secondary-color;
+			color: white;
+			border-radius: 5px;
+			padding: 4px 12px;
+			font-size: 24px;
+			font-weight: 800;
+			transition: background, color 0.3s;
+			margin-bottom: 10px;
+
+			&:hover {
+				background: white;
+				color: $secondary-color;
+			}
+		}
 	}
 }
 .product-container {
@@ -304,7 +455,8 @@ h2 {
 	gap: 50px;
 
 	img {
-		width: 150px;
+		height: 260px;
+		width: 250px;
 		object-fit: contain;
 		margin: auto;
 	}
@@ -347,6 +499,7 @@ h2 {
 	}
 }
 .single-product {
+	justify-content: center;
 	align-items: start;
 	margin: 20px 0;
 
@@ -367,24 +520,6 @@ h2 {
 	p {
 		color: white;
 	}
-	span {
-		width: fit-content;
-		display: block;
-		margin-top: 20px;
-		background: $secondary-color;
-		color: white;
-		border-radius: 5px;
-		padding: 4px 12px;
-		font-size: 24px;
-		font-weight: 800;
-		transition: background, color 0.3s;
-
-		&:hover {
-			background: white;
-			color: $secondary-color;
-			// border: 3px solid transparent;
-		}
-	}
 }
 footer {
 	display: flex;
@@ -397,7 +532,8 @@ footer {
 	background: $secondary-color;
 
 	* {
-		color: rgb(0, 0, 0);
+		color: white;
+		text-shadow: 0.5px 0.5px 1px black;
 	}
 	a {
 		width: fit-content;
@@ -415,7 +551,7 @@ footer {
 		}
 	}
 	.social-media:hover {
-		border-bottom: 2px solid rgb(0, 0, 0);
+		border-bottom: 2px solid rgb(64, 64, 64);
 		transition: 0.1s;
 	}
 }
