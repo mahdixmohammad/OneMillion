@@ -15,6 +15,8 @@ import Gelato from "./components/Products/Gelato";
 import IceCream from "./components/Products/IceCream";
 import WaffleCrepe from "./components/Products/WaffleCrepe";
 import FindUs from "./components/FindUs";
+import ScrollToTop from "./components/ScrollToTop";
+import MenuSlider from "./components/MenuSlider";
 
 function App() {
 	return (
@@ -27,6 +29,7 @@ function App() {
 						element={
 							<>
 								<Home />
+								<MenuSlider />
 								<FindUs />
 							</>
 						}
@@ -45,6 +48,7 @@ function App() {
 					<Route path="/menu/wafflecrepe" element={<WaffleCrepe />}></Route>
 				</Routes>
 				<Footer />
+				<ScrollToTop />
 			</div>
 		</BrowserRouter>
 	);

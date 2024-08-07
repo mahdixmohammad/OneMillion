@@ -11,7 +11,6 @@ const FindUs = () => {
 		const findUs = document.querySelector("#contact .find-us");
 
 		function visibleElement() {
-			console.log(googleMapIframe.getBoundingClientRect().top);
 			if (googleMapIframe.getBoundingClientRect().top <= 500) {
 				googleMapIframe.classList.add("animateSlideRight");
 			} else if (googleMapIframe.getBoundingClientRect().top > 600 && googleMapIframe.classList.contains("animateSlideRight")) {
@@ -46,7 +45,7 @@ const FindUs = () => {
 			></iframe>
 			<div className="find-us">
 				<h2>Find Us</h2>
-				<a href="https://maps.app.goo.gl/jHEWYkcwYjfe6YF1A" class="contact-info">
+				<a href="https://maps.app.goo.gl/DsDANDpa1EHWUtS48" class="contact-info">
 					<img src={locationIcon} alt="" />
 					Hayy Al Hussain, Karbala
 				</a>

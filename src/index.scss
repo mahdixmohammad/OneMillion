@@ -205,58 +205,84 @@ nav.active {
 		}
 	}
 }
-h2 {
-	font-size: 50px;
-	text-shadow: 2px 2px 4px $secondary-color;
-	border-bottom: 2px solid $secondary-color;
+.view-menu {
 	width: 80%;
-}
-.selection {
+	margin: auto;
 	padding: 100px 0;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-}
-.selection-container {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, 200px);
-	grid-template-rows: repeat(auto-fit, 250px);
-	grid-auto-rows: 250px;
-	justify-content: center;
-	width: 80%;
-	max-width: 1000px;
 	gap: 25px;
-	padding-top: 40px;
-}
-.selection-card {
-	color: $secondary-color;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	transition: scale 0.2s;
 
-	&:hover {
-		scale: 1.1;
+	h2 {
+		border: none;
+		text-align: left;
+		text-shadow: none;
+		font-size: 40px;
+	}
+	.slider-controls {
+		display: flex;
+		gap: 20px;
+	}
+	.slide-left {
+		display: flex;
+		gap: 10px;
+		transform: rotate(-90deg);
+		cursor: pointer;
+	}
+	.slide-right {
+		@extend .slide-left;
+		transform: rotate(90deg);
+	}
+	.line-1 {
+		width: 5px;
+		height: 25px;
+		background: white;
+		transform: rotate(45deg);
+	}
+	.line-2 {
+		@extend .line-1;
+		transform: rotate(-45deg);
 	}
 }
-.selection-card div {
-	padding: 0px;
-	height: 200px;
-	width: 200px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	border-radius: 25px;
-	border: 3px solid lighten($secondary-color, 10);
-	background-color: $secondary-color;
-	margin-bottom: 5px;
+.menu-slider {
+	width: 900px;
+	overflow: hidden;
 
-	img {
-		height: 160px;
-		width: 150px;
-		object-fit: contain;
-		border-radius: 10px;
+	.menu-slides {
+		display: flex;
+		gap: 30px;
+		transition: margin-left 0.4s;
+	}
+	.menu-card {
+		color: $secondary-color;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		transition: scale 0.2s;
+
+		h3 {
+			font-size: 26px;
+			font-weight: 800;
+		}
+		div {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			border-radius: 25px;
+			border: 3px solid lighten($secondary-color, 10);
+			background-color: $secondary-color;
+			margin-bottom: 10px;
+			padding: 10px;
+			transition: background 0.1s;
+
+			&:hover {
+				background: lighten($secondary-color, 10);
+			}
+			img {
+				object-fit: contain;
+			}
+		}
 	}
 }
 #contact {
@@ -270,7 +296,6 @@ h2 {
 	gap: 50px 10px;
 	overflow-x: hidden;
 }
-
 iframe {
 	margin: 10px;
 	width: 75vw;
@@ -280,7 +305,7 @@ iframe {
 	position: relative;
 	left: -25vw;
 	visibility: hidden;
-	transition: 1.5s ease-out;
+	transition: 0.8s ease-out;
 
 	&:hover {
 		transform: scale(1.05);
@@ -288,12 +313,11 @@ iframe {
 	}
 }
 .find-us {
-	width: fit-content;
 	opacity: 0;
 	position: relative;
 	right: -25vw;
 	visibility: hidden;
-	transition: 1.5s ease-out;
+	transition: 0.8s ease-out;
 
 	h2 {
 		width: 100%;
@@ -330,18 +354,6 @@ iframe {
 		padding: 25px 5px;
 	}
 }
-@keyframes slideRight {
-	to {
-		left: -25vw;
-		opacity: 0;
-	}
-}
-@keyframes slideLeft {
-	to {
-		right: -25vw;
-		opacity: 0;
-	}
-}
 .animateSlideRight {
 	visibility: visible;
 	left: 0vw;
@@ -351,6 +363,63 @@ iframe {
 	visibility: visible;
 	right: 0vw;
 	opacity: 1;
+}
+h2 {
+	font-size: 50px;
+	text-shadow: 2px 2px 4px $secondary-color;
+	border-bottom: 2px solid $secondary-color;
+	width: 80%;
+}
+.selection {
+	padding: 100px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.selection-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, 250px);
+	grid-template-rows: repeat(auto-fit, 300px);
+	grid-auto-rows: 300px;
+	justify-content: center;
+	width: 80%;
+	max-width: 1200px;
+	gap: 50px 50px;
+	padding-top: 40px;
+}
+.selection-card {
+	color: $secondary-color;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transition: scale 0.2s;
+
+	&:hover {
+		scale: 1.1;
+	}
+	h3 {
+		font-size: 26px;
+		font-weight: 800;
+	}
+}
+.selection-card div {
+	height: 250px;
+	width: 250px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 25px;
+	border: 3px solid lighten($secondary-color, 10);
+	background-color: $secondary-color;
+	margin-bottom: 10px;
+
+	img {
+		height: 190px;
+		width: 190px;
+		object-fit: contain;
+		border-radius: 10px;
+	}
 }
 .products {
 	padding: 100px 0;
