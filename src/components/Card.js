@@ -33,7 +33,7 @@ export default function Card({ name, dimension }) {
 			<div>
 				<img src={icon} alt="" style={{ width: dimension, height: dimension }} />
 			</div>
-			<h3>{name}</h3>
+			<h3 style={{ fontSize: dimension / 7 }}>{name}</h3>
 		</Link>
 	);
 }

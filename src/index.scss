@@ -206,12 +206,18 @@ nav.active {
 	}
 }
 .view-menu {
-	width: 80%;
+	width: fit-content;
 	margin: auto;
-	padding: 100px 0;
+	padding-top: 100px;
+	padding-bottom: 25px;
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
+	position: relative;
+	top: 200px;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.8s ease-out;
 
 	h2 {
 		border: none;
@@ -220,6 +226,7 @@ nav.active {
 		font-size: 40px;
 	}
 	.slider-controls {
+		width: fit-content;
 		display: flex;
 		gap: 20px;
 	}
@@ -243,14 +250,28 @@ nav.active {
 		@extend .line-1;
 		transform: rotate(-45deg);
 	}
+	@media screen and (max-width: 500px) {
+		.slide-left {
+			gap: 7.5px;
+		}
+		.line-1 {
+			width: 4px;
+			height: 20px;
+		}
+	}
+}
+.animateSlideUp {
+	visibility: visible;
+	top: 0;
+	opacity: 1;
 }
 .menu-slider {
-	width: 900px;
+	width: 80vw;
 	overflow: hidden;
+	max-width: 900px;
 
 	.menu-slides {
 		display: flex;
-		gap: 30px;
 		transition: margin-left 0.4s;
 	}
 	.menu-card {
@@ -262,7 +283,6 @@ nav.active {
 		transition: scale 0.2s;
 
 		h3 {
-			font-size: 26px;
 			font-weight: 800;
 		}
 		div {
@@ -274,7 +294,7 @@ nav.active {
 			background-color: $secondary-color;
 			margin-bottom: 10px;
 			padding: 10px;
-			transition: background 0.1s;
+			transition: background 0.2s;
 
 			&:hover {
 				background: lighten($secondary-color, 10);
@@ -291,7 +311,7 @@ nav.active {
 	justify-content: space-evenly;
 	align-items: center;
 	height: fit-content;
-	padding: 100px 10px;
+	padding: 100px 10px 150px 10px;
 	width: 100vw;
 	gap: 50px 10px;
 	overflow-x: hidden;
@@ -356,12 +376,12 @@ iframe {
 }
 .animateSlideRight {
 	visibility: visible;
-	left: 0vw;
+	left: 0;
 	opacity: 1;
 }
 .animateSlideLeft {
 	visibility: visible;
-	right: 0vw;
+	right: 0;
 	opacity: 1;
 }
 h2 {
