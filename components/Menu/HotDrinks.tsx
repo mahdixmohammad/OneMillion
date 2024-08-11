@@ -78,24 +78,9 @@ const HotDrinks = () => {
 			<Product name="Cortado" icon={cortado} types={cortadoTypes} />
 			<Product name="Espresso Macchiato" icon={espressoMacchiato} types={expressoMacchiatoTypes} />
 			<Product name="Caramel Macchiato" icon={caramelMacchiato} types={caramelMacchiatoTypes} />
-			<SingleProduct
-				name="V60"
-				icon={v60}
-				description="For those who love the taste of coffee with its concentrated hints and bitter sweetness, V60 coffee is an excellent choice to feel the taste of ground coffee beans distilled at calculated temperatures proportional to the amount of water."
-				price="4.0"
-			/>
-			<SingleProduct
-				name="Chemex"
-				icon={chemex}
-				description="For those who love the taste of coffee with its concentrated and light hints at the same time, as it is compatible with the grinding degree, which is different from 160 in a less concentrated way, it is an excellent choice for those who love light flavours in their coffee."
-				price="4.0"
-			/>
-			<SingleProduct
-				name="Cold Brew"
-				icon={coldBrew}
-				description="For those who love the taste of brewed coffee that has been steeped in its flavours for at least 3 days in specific proportions, cold brew coffee is an excellent choice for those who feel and desire aging in their choice."
-				price="5.5"
-			/>
+			<SingleProduct name="V60" icon={v60} price="4.0" />
+			<SingleProduct name="Chemex" icon={chemex} price="4.0" />
+			<SingleProduct name="Cold Brew" icon={coldBrew} price="5.5" />
 		</div>
 	);
 };

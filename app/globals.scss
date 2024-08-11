@@ -150,39 +150,49 @@ nav.active {
 		padding: 5px;
 	}
 }
-@keyframes exposureAnimation {
-	from {
-		filter: saturate(90%) contrast(90%);
-	}
-	to {
-		filter: saturate(120%) contrast(120%);
-	}
-}
 #home {
 	position: relative;
 	width: 100%;
-	height: 100vh;
-	animation: exposureAnimation 3s ease-in-out alternate infinite;
+	height: 500px;
 
 	img {
 		width: 100%;
-		height: 100vh;
+		height: 500px;
 		object-fit: cover;
+	}
+	h1 {
+		bottom: 275px;
+		left: 0;
+		right: 0;
+		position: absolute;
+		font-family: sans-serif;
+		font-size: clamp(67px, 7vw, 85px);
+		font-weight: 900;
+		-webkit-text-stroke: 2px white;
+		color: rgb(255, 255, 255);
+		letter-spacing: 4px;
+
+		@media screen and (max-width: 900px) {
+			bottom: 270px;
+		}
+		@media screen and (max-width: 450px) {
+			font-size: 15.5vw;
+		}
 	}
 	@keyframes arrowBounce {
 		to {
-			top: 83%;
+			bottom: 81px;
 		}
 	}
 	.scroll-down {
 		width: fit-content;
 		position: absolute;
-		top: 85%;
+		bottom: 95px;
 		left: 0;
 		right: 0;
 		margin-left: auto;
 		margin-right: auto;
-		animation: arrowBounce 0.9s linear infinite alternate;
+		animation: arrowBounce 0.8s linear infinite alternate;
 		cursor: pointer;
 	}
 	.scroll-down:hover * {
@@ -197,20 +207,12 @@ nav.active {
 		height: 3px;
 		transition: background 0.3s;
 	}
-
-	@media screen and (max-width: 550px) {
-		height: 70vh;
-
-		img {
-			height: 70vh;
-		}
-	}
 }
 .view-menu {
 	width: fit-content;
 	margin: auto;
-	padding-top: 100px;
-	padding-bottom: 25px;
+	padding-top: 150px;
+	padding-bottom: 50px;
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
@@ -225,6 +227,16 @@ nav.active {
 		text-align: left;
 		text-shadow: none;
 		font-size: 40px;
+	}
+	.menu-slider {
+		width: 80vw;
+		overflow: hidden;
+		max-width: 890px;
+
+		.menu-slides {
+			display: flex;
+			transition: margin-left 0.4s;
+		}
 	}
 	.slider-controls {
 		width: fit-content;
@@ -252,6 +264,13 @@ nav.active {
 		transform: rotate(-45deg);
 	}
 	@media screen and (max-width: 500px) {
+		h2,
+		.slider-controls {
+			margin-left: 25px;
+		}
+		.menu-slider {
+			width: 100vw;
+		}
 		.slide-left {
 			gap: 7.5px;
 		}
@@ -266,17 +285,8 @@ nav.active {
 	top: 0;
 	opacity: 1;
 }
-.menu-slider {
-	width: 80vw;
-	overflow: hidden;
-	max-width: 900px;
 
-	.menu-slides {
-		display: flex;
-		transition: margin-left 0.4s;
-	}
-}
-.menu-card {
+.card {
 	color: $secondary-color;
 	display: flex;
 	justify-content: center;
@@ -358,11 +368,11 @@ iframe {
 	border: 3px solid transparent;
 	gap: 10px;
 	color: white;
+	transition: background 0.2s linear, border 0.2s linear;
 
 	&:hover {
 		border: 3px solid $secondary-color;
 		background: rgba(226, 172, 69, 0.5);
-		transition: 0.3s linear;
 	}
 	img {
 		display: inline;

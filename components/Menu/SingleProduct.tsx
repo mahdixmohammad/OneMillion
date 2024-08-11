@@ -1,6 +1,12 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
-const SingleProduct = ({ name, icon, price }) => {
+interface Props {
+	name: string;
+	icon: StaticImageData;
+	price: string;
+}
+
+const SingleProduct = ({ name, icon, price }: Props) => {
 	return (
 		<div className="product">
 			<h3>

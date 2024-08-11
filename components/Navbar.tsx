@@ -13,20 +13,21 @@ const Navbar = () => {
 	const [currentLogo, setCurrentLogo] = useState(goldLogo);
 
 	useEffect(() => {
-		document.querySelector("nav").classList.remove("active");
+		const nav = document.querySelector("nav")!;
+		nav.classList.remove("active");
 		setCurrentLogo(goldLogo);
 
-		if (pathname === "/") {
-			function checkNavActive() {
-				if (window.scrollY <= 400) {
-					document.querySelector("nav").classList.add("active");
-					setCurrentLogo(whiteLogo);
-				} else {
-					document.querySelector("nav").classList.remove("active");
-					setCurrentLogo(goldLogo);
-				}
+		function checkNavActive() {
+			if (window.scrollY <= 400) {
+				nav.classList.add("active");
+				setCurrentLogo(whiteLogo);
+			} else {
+				nav.classList.remove("active");
+				setCurrentLogo(goldLogo);
 			}
+		}
 
+		if (pathname === "/") {
 			checkNavActive();
 
 			window.addEventListener("scroll", checkNavActive);
@@ -37,7 +38,7 @@ const Navbar = () => {
 		}
 	}, [pathname]);
 
-	const handleClick = href => {
+	const handleClick = (href: string) => {
 		setActiveLink(href);
 	};
 

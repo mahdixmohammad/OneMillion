@@ -10,8 +10,8 @@ import Image from "next/image";
 
 const FindUs = () => {
 	useEffect(() => {
-		const googleMapIframe = document.querySelector("#contact iframe");
-		const findUs = document.querySelector("#contact .find-us");
+		const googleMapIframe = document.querySelector("#contact iframe")!;
+		const findUs = document.querySelector("#contact .find-us")!;
 
 		function visibleElement() {
 			if (googleMapIframe.getBoundingClientRect().top <= 500) {
@@ -42,29 +42,28 @@ const FindUs = () => {
 				width="1000"
 				height="450"
 				title="Find Us"
-				allowfullscreen=""
 				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"
+				referrerPolicy="no-referrer-when-downgrade"
 			></iframe>
 			<div className="find-us">
 				<h2>Find Us</h2>
-				<a href="https://maps.app.goo.gl/DsDANDpa1EHWUtS48" class="contact-info">
+				<a href="https://maps.app.goo.gl/DsDANDpa1EHWUtS48" className="contact-info">
 					<Image src={locationIcon} alt="" />
 					Hayy Al Hussain, Karbala
 				</a>
-				<a href="tel:+9647723900900" class="contact-info">
+				<a href="tel:+9647723900900" className="contact-info">
 					<Image src={phoneIcon} alt="" />
 					+07716666911
 				</a>
-				<a href="https://www.instagram.com/1million.iraq" class="contact-info">
+				<a href="https://www.instagram.com/1million.iraq" className="contact-info">
 					<Image src={instagramIcon} alt="" />
 					@1million.iraq
 				</a>
-				<a href="https://www.facebook.com/1millioniraq" class="contact-info">
+				<a href="https://www.facebook.com/1millioniraq" className="contact-info">
 					<Image src={facebookIcon} alt="" />
 					1millioniraq
 				</a>
-				<a href="mailto:ceo@futgulf.com" class="contact-info">
+				<a href="mailto:ceo@futgulf.com" className="contact-info">
 					<Image src={mailIcon} alt="" />
 					ceo@futgulf.com
 				</a>
