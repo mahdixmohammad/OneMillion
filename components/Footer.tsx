@@ -1,11 +1,11 @@
-import logo from "@/public/images/one-million-logo-white.png";
+import logo from "@/public/images/one-million-logo-footer.png";
 import Image from "next/image";
 
-const Footer = () => {
+export default function Footer() {
 	return (
 		<footer>
 			<a href="# ">
-				<Image src={logo} id="logo" alt="" />
+				<Image src={logo} id="footer-logo" alt="" />
 			</a>
 			<ul>
 				<li>
@@ -27,6 +27,4 @@ const Footer = () => {
 			<label className="copyright">Copyright &copy; Future Gulf Company 2024</label>
 		</footer>
 	);
-};
-
-export default Footer;
+}

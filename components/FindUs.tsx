@@ -8,7 +8,7 @@ import mailIcon from "@/public/icons/mail-icon.png";
 import { useEffect } from "react";
 import Image from "next/image";
 
-const FindUs = () => {
+export default function FindUs() {
 	useEffect(() => {
 		const googleMapIframe = document.querySelector("#contact iframe")!;
 		const findUs = document.querySelector("#contact .find-us")!;
@@ -68,20 +68,6 @@ const FindUs = () => {
 					ceo@futgulf.com
 				</a>
 			</div>
-			{/* <form method="post" action="send-email.php">
-				<h2>Get in touch with us!</h2>
-				<input type="text" id="name" name="name" placeholder="Full Name" autocomplete="off" required />
-				<input type="email" id="email" name="email" placeholder="Email Address" autocomplete="off" required />
-				<input type="text" id="subject" name="subject" placeholder="Subject" autocomplete="off" required />
-				<textarea id="message" rows="4" name="message" placeholder="Message"></textarea>
-				<button type="submit">
-					<img src={sendIcon} alt="" />
-					Send
-				</button>
-				<input type="hidden" name="_captcha" value="false" />
-			</form> */}
 		</section>
 	);
-};
-
-export default FindUs;
+}

@@ -4,26 +4,21 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import whiteLogo from "@/public/images/one-million-logo-white.png";
-import goldLogo from "@/public/images/one-million-logo-gold.png";
+import logo from "@/public/images/one-million-logo-nav.png";
 
-const Navbar = () => {
+export default function Navbar() {
 	const pathname = usePathname();
 	const [activeLink, setActiveLink] = useState(pathname);
-	const [currentLogo, setCurrentLogo] = useState(goldLogo);
 
 	useEffect(() => {
 		const nav = document.querySelector("nav")!;
 		nav.classList.remove("active");
-		setCurrentLogo(goldLogo);
 
 		function checkNavActive() {
-			if (window.scrollY <= 400) {
+			if (window.scrollY <= window.innerHeight - 70) {
 				nav.classList.add("active");
-				setCurrentLogo(whiteLogo);
 			} else {
 				nav.classList.remove("active");
-				setCurrentLogo(goldLogo);
 			}
 		}
 
@@ -40,12 +35,21 @@ const Navbar = () => {
 
 	const handleClick = (href: string) => {
 		setActiveLink(href);
+		const nav = document.querySelector("nav")!;
+		if (nav.classList.contains("hamburger-active")) {
+			nav.classList.remove("hamburger-active");
+		}
+	};
+
+	const hamburgerClick = () => {
+		const nav = document.querySelector("nav")!;
+		nav.classList.toggle("hamburger-active");
 	};
 
 	return (
 		<nav>
 			<Link href="/" onClick={() => handleClick("/")}>
-				<Image src={currentLogo} id="logo" alt="Logo" />
+				<Image src={logo} id="logo" alt="Logo" />
 			</Link>
 			<ul>
 				<li>
@@ -59,13 +63,15 @@ const Navbar = () => {
 					</Link>
 				</li>
 			</ul>
-			<div className="hamburger">
+			<div className="hamburger" onClick={hamburgerClick}>
 				<div className="line"></div>
 				<div className="line"></div>
 				<div className="line"></div>
 			</div>
+			<div className="x" onClick={hamburgerClick}>
+				<div className="line-1"></div>
+				<div className="line-2"></div>
+			</div>
 		</nav>
 	);
-};
-
-export default Navbar;
+}

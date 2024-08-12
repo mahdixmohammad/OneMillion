@@ -22,30 +22,12 @@ import redVelvetCake from "@/public/icons/cake/red-velvet-cake.png";
 import honeyCake from "@/public/icons/cake/honey-cake.png";
 import sanSebastian from "@/public/icons/cake/san-sebastian.png";
 import chocolateHoneyCake from "@/public/icons/cake/chocolate-honey-cake.png";
+import Header from "./Header";
 
-const Cake = () => {
+export default function Cake() {
 	return (
 		<div className="products">
-			<h2>
-				<Link href="/menu">
-					<div className="go-back-container">
-						<svg
-							data-slot="icon"
-							fill="none"
-							stroke-width="1.5"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-							xmlns="http://www.w3.org/2000/svg"
-							aria-hidden="true"
-							className="go-back-arrow"
-						>
-							<path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"></path>
-						</svg>
-						Go Back
-					</div>
-				</Link>
-				Cake
-			</h2>
+			<Header productName="Cake" />
 			<SingleProduct name="Red Velvet" icon={redVelvet} price="4.0" />
 			<SingleProduct name="Blue Velvet" icon={blueVelvet} price="4.0" />
 			<SingleProduct name="Nutella" icon={nutellaCake} price="4.0" />
@@ -70,6 +52,4 @@ const Cake = () => {
 			<SingleProduct name="Chocolate Honey Cake" icon={chocolateHoneyCake} price="4.0" />
 		</div>
 	);
-};
-
-export default Cake;
+}

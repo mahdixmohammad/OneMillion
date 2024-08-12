@@ -6,7 +6,7 @@ interface Props {
 	price: string;
 }
 
-const SingleProduct = ({ name, icon, price }: Props) => {
+export default function SingleProduct({ name, icon, price }: Props) {
 	return (
 		<div className="product">
 			<h3>
@@ -21,6 +21,4 @@ const SingleProduct = ({ name, icon, price }: Props) => {
 			</div>
 		</div>
 	);
-};
-
-export default SingleProduct;
+}

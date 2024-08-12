@@ -1,6 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&family=Radio+Canada+Big:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-$secondary-color: rgb(226, 172, 69);
+$background-color: rgb(247, 232, 203);
+$secondary-color: rgb(125, 39, 48);
 
 html {
 	scroll-behavior: smooth;
@@ -14,6 +15,7 @@ html {
 }
 body {
 	background: linear-gradient(90deg, rgb(15, 15, 15) 20%, rgb(25, 25, 25) 50%, rgb(15, 15, 15) 80%);
+	background: $background-color;
 	font-family: "Merienda", "Calibri", sans-serif;
 	text-align: center;
 	font-size: 18px;
@@ -22,27 +24,30 @@ body {
 }
 nav {
 	display: flex;
-	width: 100vw;
-	height: 80px;
+	width: 80vw;
+	height: 70px;
+	border-radius: 20px;
+	margin: auto;
+	margin-top: 10px;
+	left: 0;
+	right: 0;
 	align-items: center;
 	justify-content: space-between;
 	z-index: 1000;
-	padding: 0 10%;
-	transition: background 0.4s;
+	padding: 0 5%;
+	transition: all 0.4s;
 	position: fixed;
-	background: rgba(20, 20, 20, 0.95);
-	backdrop-filter: blur(5px);
-	box-shadow: 0 0 1px 1px rgb(30, 30, 30);
+	background: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(20px);
 
 	ul {
 		display: flex;
 		gap: 10px;
-		height: 50px;
 		align-items: center;
 	}
 	li a {
 		padding: 5px 20px;
-		color: rgb(255, 255, 255);
+		color: $background-color;
 		font-size: 22px;
 		font-weight: 500;
 		margin: 0 0 5px;
@@ -51,11 +56,22 @@ nav {
 
 		&.active {
 			background: $secondary-color;
-			color: white;
 		}
 		&:hover:not(.active) {
-			background: white;
-			color: $secondary-color;
+			background: $secondary-color;
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		padding: 0 30px;
+		width: 85vw;
+		ul {
+			display: none;
+		}
+		.hamburger {
+			display: block;
+			position: static;
+			right: 20px;
 		}
 	}
 }
@@ -63,30 +79,87 @@ nav.active {
 	background: transparent;
 	backdrop-filter: revert;
 	box-shadow: 0 0 1px 1px transparent;
+	justify-content: center;
 
-	li a.active {
-		background: white;
-		color: $secondary-color;
+	#logo {
+		display: none;
 	}
-	li a:hover:not(.active) {
-		background: $secondary-color;
-		color: white;
+	.hamburger {
+		margin: auto;
+		right: initial;
+	}
+}
+nav.hamburger-active {
+	margin: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.6);
+	border-radius: 0px;
+	backdrop-filter: blur(20px);
+	flex-direction: column-reverse;
+	padding-top: 50px !important;
+	justify-content: start;
+	align-items: center;
+	gap: 75px;
+	padding: 0;
+
+	.hamburger {
+		display: none;
+		position: static;
+		margin: 0;
+		left: initial;
+		right: initial;
+	}
+	.x {
+		display: flex;
+	}
+	#logo {
+		display: none;
+	}
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
 	}
 }
 #logo {
-	width: 50px;
-	height: auto;
+	margin-top: 7px;
+	width: auto;
+	height: 60px;
 }
 .hamburger {
 	display: none;
 	cursor: pointer;
+
+	.line {
+		background: $background-color;
+		width: 30px;
+		height: 3.5px;
+		margin: 6px 0;
+		border-radius: 5px;
+	}
 }
-.hamburger .line {
-	background: rgb(130, 130, 130);
-	width: 30px;
-	height: 3.5px;
-	margin: 6px 0;
-	border-radius: 5px;
+.x {
+	width: 25px;
+	height: 25px;
+	position: relative;
+	justify-content: center;
+	align-items: center;
+	display: none;
+	cursor: pointer;
+
+	.line-1 {
+		position: absolute;
+		width: 30px;
+		height: 3px;
+		border-radius: 5px;
+		background: $background-color;
+		transform: rotate(45deg);
+	}
+	.line-2 {
+		@extend .line-1;
+		transform: rotate(-45deg);
+	}
 }
 .active * {
 	font-weight: 600;
@@ -131,20 +204,6 @@ nav.active {
 .arrow.active .rarr {
 	transform: rotate(45deg);
 }
-@media only screen and (max-width: 550px) {
-	/* .hamburger {
-      display: block;
-      position: absolute;
-      right: 20px;
-  } */
-	nav {
-		/* justify-content: space-between; */
-		padding: 0 30px;
-	}
-	/* nav ul {
-      display: none;
-  } */
-}
 @media only screen and (max-width: 300px) {
 	nav {
 		padding: 5px;
@@ -153,41 +212,57 @@ nav.active {
 #home {
 	position: relative;
 	width: 100%;
-	height: 500px;
+	height: 100vh;
 
-	img {
+	.homeImage {
 		width: 100%;
-		height: 500px;
+		height: 100vh;
 		object-fit: cover;
+		filter: brightness(40%);
 	}
-	h1 {
-		bottom: 275px;
+	.main-title {
+		width: fit-content;
+		position: absolute;
+		margin: auto;
+		top: 50%;
+		transform: translateY(-50%);
 		left: 0;
 		right: 0;
-		position: absolute;
-		font-family: sans-serif;
-		font-size: clamp(67px, 7vw, 85px);
+	}
+	h1 {
+		font-family: "Radio Canada Big";
+		font-size: 90px;
+		line-height: 110px;
 		font-weight: 900;
-		-webkit-text-stroke: 2px white;
 		color: rgb(255, 255, 255);
-		letter-spacing: 4px;
+		text-shadow: 0px 0px 1px black;
 
-		@media screen and (max-width: 900px) {
-			bottom: 270px;
+		&.name {
+			font-family: "Merienda";
+			color: rgb(211, 175, 43);
 		}
-		@media screen and (max-width: 450px) {
-			font-size: 15.5vw;
+		@media screen and (max-width: 500px) {
+			font-size: 13vw;
 		}
 	}
+	.homeLogo {
+		width: 650px;
+		height: auto;
+
+		@media screen and (max-width: 800px) {
+			width: 85vw;
+		}
+	}
+	$scrollDownPosition: 70px;
 	@keyframes arrowBounce {
 		to {
-			bottom: 81px;
+			bottom: $scrollDownPosition - 13;
 		}
 	}
 	.scroll-down {
 		width: fit-content;
 		position: absolute;
-		bottom: 95px;
+		bottom: $scrollDownPosition;
 		left: 0;
 		right: 0;
 		margin-left: auto;
@@ -196,7 +271,7 @@ nav.active {
 		cursor: pointer;
 	}
 	.scroll-down:hover * {
-		background: $secondary-color;
+		background: $background-color;
 	}
 	.larr {
 		left: 9px;
@@ -256,7 +331,7 @@ nav.active {
 	.line-1 {
 		width: 5px;
 		height: 25px;
-		background: white;
+		background: $secondary-color;
 		transform: rotate(45deg);
 	}
 	.line-2 {
@@ -301,14 +376,14 @@ nav.active {
 		justify-content: center;
 		align-items: center;
 		border-radius: 25px;
-		border: 3px solid lighten($secondary-color, 10);
-		background-color: $secondary-color;
+		border: 4px solid $secondary-color;
+		background-color: transparent;
 		margin-bottom: 10px;
 		padding: 10px;
 		transition: background 0.2s;
 
 		&:hover {
-			background: lighten($secondary-color, 10);
+			background: $secondary-color;
 		}
 		img {
 			object-fit: contain;
@@ -367,12 +442,12 @@ iframe {
 	border-radius: 12px;
 	border: 3px solid transparent;
 	gap: 10px;
-	color: white;
+	color: $secondary-color;
 	transition: background 0.2s linear, border 0.2s linear;
 
 	&:hover {
 		border: 3px solid $secondary-color;
-		background: rgba(226, 172, 69, 0.5);
+		background: rgba(125, 39, 48, 0.5);
 	}
 	img {
 		display: inline;
@@ -436,6 +511,7 @@ h2 {
 
 		@media only screen and (max-width: 900px) {
 			position: revert;
+			margin-bottom: 10px;
 		}
 	}
 	.go-back-arrow {
@@ -483,7 +559,7 @@ h2 {
 		margin: auto;
 	}
 	span {
-		color: white;
+		color: rgb(0, 0, 0);
 	}
 	div {
 		font-size: 21px;
@@ -507,10 +583,7 @@ h2 {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	column-gap: 500px;
-	width: 310px;
-	min-width: fit-content;
-	max-width: 400px;
+	width: 325px;
 
 	div {
 		border-radius: 5px;
@@ -521,6 +594,10 @@ h2 {
 	.heading {
 		background: $secondary-color;
 		color: white;
+
+		span {
+			color: white;
+		}
 	}
 }
 .single-product {
@@ -553,18 +630,19 @@ footer {
 	padding: 20px;
 	font-size: 14px;
 	width: 100%;
-	border-top: 3px solid rgb(60, 60, 60);
-	background: $secondary-color;
+	border-top: 3px solid darken($background-color, 5);
+	background: darken($background-color, 3);
 
 	* {
-		color: white;
-		text-shadow: 0.5px 0.5px 1px black;
+		color: $secondary-color;
 	}
 	a {
 		width: fit-content;
 	}
-	#logo {
-		margin-bottom: 5px;
+	#footer-logo {
+		width: 200px;
+		height: auto;
+		margin-bottom: 15px;
 	}
 	ul {
 		display: flex;
@@ -576,7 +654,7 @@ footer {
 		}
 	}
 	.social-media:hover {
-		border-bottom: 2px solid rgb(64, 64, 64);
+		border-bottom: 2px solid $secondary-color;
 		transition: 0.1s;
 	}
 }

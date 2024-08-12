@@ -9,8 +9,9 @@ import daljona from "@/public/icons/cold-drinks/dalgona.png";
 import frappuccino from "@/public/icons/cold-drinks/frappuccino.png";
 import icedtea from "@/public/icons/cold-drinks/iced-tea.png";
 import icedcoffee from "@/public/icons/cold-drinks/iced-coffee.png";
+import Header from "./Header";
 
-const ColdDrinks = () => {
+export default function ColdDrinks() {
 	const naturalJuiceTypes = {
 		Orange: "3.0",
 		Lemon: "3.0",
@@ -118,26 +119,7 @@ const ColdDrinks = () => {
 
 	return (
 		<div className="products">
-			<h2>
-				<Link href="/menu">
-					<div className="go-back-container">
-						<svg
-							data-slot="icon"
-							fill="none"
-							stroke-width="1.5"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-							xmlns="http://www.w3.org/2000/svg"
-							aria-hidden="true"
-							className="go-back-arrow"
-						>
-							<path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"></path>
-						</svg>
-						Go Back
-					</div>
-				</Link>
-				Cold Drinks
-			</h2>
+			<Header productName="Cold Drinks" />
 			<Product name="Natural Juices" icon={naturalJuice} types={naturalJuiceTypes} />
 			<Product name="Smoothies" icon={smoothie} types={smoothieTypes} />
 			<Product name="Milkshakes" icon={milkshake} types={milkshakeTypes} />
@@ -149,6 +131,4 @@ const ColdDrinks = () => {
 			<Product name="Iced Coffee" icon={icedcoffee} types={icedcoffeeTypes} />
 		</div>
 	);
-};
-
-export default ColdDrinks;
+}

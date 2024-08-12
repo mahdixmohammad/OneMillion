@@ -1,6 +1,6 @@
 import Card from "@/components/Card";
 
-const Selection = () => {
+export default function Selection() {
 	const items = [
 		"Cold Drinks",
 		"Mix",
@@ -25,6 +25,4 @@ const Selection = () => {
 			</div>
 		</section>
 	);
-};
-
-export default Selection;
+}

@@ -9,8 +9,9 @@ import caramelMacchiato from "@/public/icons/hot-drinks/caramel-machiato.png";
 import v60 from "@/public/icons/hot-drinks/v60.png";
 import chemex from "@/public/icons/hot-drinks/chemex.png";
 import coldBrew from "@/public/icons/hot-drinks/cold-brew.png";
+import Header from "./Header";
 
-const HotDrinks = () => {
+export default function HotDrinks() {
 	const espressoTypes = {
 		Mocha: "3.5, 4.5",
 		"White Mocha": "3.5, 4.5",
@@ -53,26 +54,7 @@ const HotDrinks = () => {
 
 	return (
 		<div className="products">
-			<h2>
-				<Link href="/menu">
-					<div className="go-back-container">
-						<svg
-							data-slot="icon"
-							fill="none"
-							stroke-width="1.5"
-							stroke="currentColor"
-							viewBox="0 0 24 24"
-							xmlns="http://www.w3.org/2000/svg"
-							aria-hidden="true"
-							className="go-back-arrow"
-						>
-							<path stroke-linecap="round" stroke-linejoin="round" d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"></path>
-						</svg>
-						Go Back
-					</div>
-				</Link>
-				Hot Drinks
-			</h2>
+			<Header productName="Hot Drinks" />
 			<Product name="Espresso" icon={latte} types={espressoTypes} />
 			<Product name="Turkish Coffee" icon={turkishCoffee} types={turkishCoffeeTypes} />
 			<Product name="Cortado" icon={cortado} types={cortadoTypes} />
@@ -83,6 +65,4 @@ const HotDrinks = () => {
 			<SingleProduct name="Cold Brew" icon={coldBrew} price="5.5" />
 		</div>
 	);
-};
-
-export default HotDrinks;
+}

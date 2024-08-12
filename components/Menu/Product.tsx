@@ -6,7 +6,7 @@ interface Props {
 	types: any;
 }
 
-const Product = ({ name, icon, types }: Props) => {
+export default function Product({ name, icon, types }: Props) {
 	return (
 		<div className="product">
 			<h3>{name}</h3>
@@ -31,6 +31,4 @@ const Product = ({ name, icon, types }: Props) => {
 			</div>
 		</div>
 	);
-};
-
-export default Product;
+}

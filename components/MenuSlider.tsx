@@ -3,7 +3,7 @@
 import { useEffect, useState, useCallback } from "react";
 import Card from "./Card";
 
-const MenuSlider = () => {
+export default function MenuSlider() {
 	const [marginLeft, setMarginLeft] = useState(0);
 	const [dimension, setDimension] = useState(175);
 	const [isDragging, setIsDragging] = useState(false);
@@ -79,8 +79,8 @@ const MenuSlider = () => {
 			const line1: HTMLElement = element.querySelector(".line-1")!;
 			const line2: HTMLElement = element.querySelector(".line-2")!;
 
-			line1.style.background = condition ? "gray" : "white";
-			line2.style.background = condition ? "gray" : "white";
+			line1.style.background = condition ? "rgb(70, 70, 70)" : "rgb(125, 39, 48)";
+			line2.style.background = condition ? "rgb(70, 70, 70)" : "rgb(125, 39, 48)";
 			element.style.pointerEvents = condition ? "none" : "auto";
 		}
 
@@ -149,6 +149,4 @@ const MenuSlider = () => {
 			</div>
 		</section>
 	);
-};
-
-export default MenuSlider;
+}
