@@ -1,4 +1,3 @@
-import Link from "next/link";
 import SingleProduct from "./SingleProduct";
 import strawberry from "@/public/icons/bubbles/strawberry-bubbles.png";
 import pineapple from "@/public/icons/bubbles/pineapple-bubbles.png";

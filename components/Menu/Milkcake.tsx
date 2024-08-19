@@ -1,4 +1,3 @@
-import Link from "next/link";
 import SingleProduct from "./SingleProduct";
 import caramelCake from "@/public/icons/milkcake/caramel-cake.png";
 import pistachioCake from "@/public/icons/milkcake/pistachio-cake.png";

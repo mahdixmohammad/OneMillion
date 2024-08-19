@@ -1,4 +1,3 @@
-import Link from "next/link";
 import SingleProduct from "./SingleProduct";
 import croissant from "@/public/icons/bakery/croissant.png";
 import coffeeBun from "@/public/icons/bakery/coffee-bun.png";

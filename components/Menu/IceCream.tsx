@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Product from "./Product";
 import SingleProduct from "./SingleProduct";
 import soft from "@/public/icons/icecream/soft.png";

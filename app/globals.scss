@@ -253,7 +253,7 @@ nav.hamburger-active {
 			width: 85vw;
 		}
 	}
-	$scrollDownPosition: 70px;
+	$scrollDownPosition: 120px;
 	@keyframes arrowBounce {
 		to {
 			bottom: $scrollDownPosition - 13;
@@ -291,11 +291,6 @@ nav.hamburger-active {
 	display: flex;
 	flex-direction: column;
 	gap: 25px;
-	position: relative;
-	top: 200px;
-	opacity: 0;
-	visibility: hidden;
-	transition: 0.8s ease-out;
 
 	h2 {
 		border: none;
@@ -355,12 +350,6 @@ nav.hamburger-active {
 		}
 	}
 }
-.animateSlideUp {
-	visibility: visible;
-	top: 0;
-	opacity: 1;
-}
-
 .card {
 	color: $secondary-color;
 	display: flex;
@@ -406,11 +395,6 @@ iframe {
 	width: 75vw;
 	max-width: 530px;
 	border: none;
-	opacity: 0;
-	position: relative;
-	left: -25vw;
-	visibility: hidden;
-	transition: 0.8s ease-out;
 
 	&:hover {
 		transform: scale(1.05);
@@ -418,12 +402,6 @@ iframe {
 	}
 }
 .find-us {
-	opacity: 0;
-	position: relative;
-	right: -25vw;
-	visibility: hidden;
-	transition: 0.8s ease-out;
-
 	h2 {
 		width: 100%;
 		font-size: 40px;
@@ -454,21 +432,10 @@ iframe {
 		width: 30px;
 		height: auto;
 	}
-
 	@media only screen and (max-width: 500px) {
 		font-size: 18px;
 		padding: 25px 5px;
 	}
-}
-.animateSlideRight {
-	visibility: visible;
-	left: 0;
-	opacity: 1;
-}
-.animateSlideLeft {
-	visibility: visible;
-	right: 0;
-	opacity: 1;
 }
 h2 {
 	font-size: 50px;
@@ -577,7 +544,7 @@ h2 {
 	width: 300px;
 	background: $secondary-color;
 	border-radius: 25px;
-	border: 4px solid lighten($secondary-color, 10);
+	border: 6px solid lighten($secondary-color, 5);
 }
 .product-types {
 	display: flex;

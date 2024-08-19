@@ -1,40 +1,11 @@
-"use client";
-
 import locationIcon from "@/public/icons/location-icon.png";
 import phoneIcon from "@/public/icons/phone-icon.png";
 import instagramIcon from "@/public/icons/instagram-icon.png";
 import facebookIcon from "@/public/icons/facebook-icon.png";
 import mailIcon from "@/public/icons/mail-icon.png";
-import { useEffect } from "react";
 import Image from "next/image";
 
 export default function FindUs() {
-	useEffect(() => {
-		const googleMapIframe = document.querySelector("#contact iframe")!;
-		const findUs = document.querySelector("#contact .find-us")!;
-
-		function visibleElement() {
-			if (googleMapIframe.getBoundingClientRect().top <= 500) {
-				googleMapIframe.classList.add("animateSlideRight");
-			} else if (googleMapIframe.getBoundingClientRect().top > 600 && googleMapIframe.classList.contains("animateSlideRight")) {
-				googleMapIframe.classList.remove("animateSlideRight");
-			}
-			if (findUs.getBoundingClientRect().top <= 500) {
-				findUs.classList.add("animateSlideLeft");
-			} else if (findUs.getBoundingClientRect().top > 600 && findUs.classList.contains("animateSlideLeft")) {
-				findUs.classList.remove("animateSlideLeft");
-			}
-		}
-
-		visibleElement();
-
-		window.addEventListener("scroll", visibleElement);
-
-		return () => {
-			window.removeEventListener("scroll", visibleElement);
-		};
-	});
-
 	return (
 		<section id="contact">
 			<iframe
@@ -51,7 +22,7 @@ export default function FindUs() {
 					<Image src={locationIcon} alt="" />
 					Hayy Al Hussain, Karbala
 				</a>
-				<a href="tel:+9647723900900" className="contact-info">
+				<a href="tel:+07716666911" className="contact-info">
 					<Image src={phoneIcon} alt="" />
 					+07716666911
 				</a>

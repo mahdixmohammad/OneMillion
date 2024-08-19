@@ -1,4 +1,3 @@
-import Link from "next/link";
 import SingleProduct from "./SingleProduct";
 import redVelvet from "@/public/icons/cake/red-velvet.png";
 import blueVelvet from "@/public/icons/cake/blue-velvet.png";

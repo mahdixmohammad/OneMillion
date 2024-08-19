@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Product from "./Product";
 import naturalJuice from "@/public/icons/cold-drinks/natural-juice.png";
 import smoothie from "@/public/icons/cold-drinks/smoothie.png";

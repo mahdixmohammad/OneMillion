@@ -88,37 +88,21 @@ export default function MenuSlider() {
 		updateSlideButtonStyles(".slide-left", marginLeft === 0);
 		updateSlideButtonStyles(".slide-right", marginLeft <= maxMarginLeft);
 
-		const viewMenu = document.querySelector(".view-menu")!;
-
-		function visibleElement() {
-			if (viewMenu.getBoundingClientRect().top <= 450) {
-				viewMenu.classList.add("animateSlideUp");
-			} else if (viewMenu.getBoundingClientRect().top > 450 && viewMenu.classList.contains("animateSlideUp")) {
-				viewMenu.classList.remove("animateSlideUp");
-			}
-		}
-
-		visibleElement();
-
 		function handleResize() {
 			if (window.innerWidth >= 500) setDimension(175);
 			else setDimension(150);
 		}
 
 		handleResize();
-
-		window.addEventListener("scroll", visibleElement);
 		window.addEventListener("resize", handleResize);
 
 		const menuSlider = document.querySelector(".menu-slider")!;
-
 		menuSlider.addEventListener("mousemove", handleMouseMove);
 		menuSlider.addEventListener("mouseup", handleMouseUp);
 		menuSlider.addEventListener("touchmove", handleMouseMove);
 		menuSlider.addEventListener("touchend", handleMouseUp);
 
 		return () => {
-			window.removeEventListener("scroll", visibleElement);
 			window.removeEventListener("resize", handleResize);
 			menuSlider.removeEventListener("mousemove", handleMouseMove);
 			menuSlider.removeEventListener("mouseup", handleMouseUp);
